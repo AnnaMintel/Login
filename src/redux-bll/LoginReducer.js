@@ -1,4 +1,5 @@
 import { axiosInstance } from "../dal/axios-instance";
+import { me, setIsAuth } from "./AuthReducer";
 
 const SET_STATUS = 'APP/LOGIN/SET_STATUS';
 const SET_MESSAGE = 'APP/LOGIN/SET_MESSAGE';
@@ -30,7 +31,8 @@ export const login = (login, pass, rm, captcha) => (dispatch) => {
     }).then((res) => {
         if (res.data.resultCode === 0) {
             dispatch(setStatus(statuses.SUCCESS));
-            alert('you are loggined');
+            dispatch(setIsAuth(true));
+            dispatch(me());
         } else {
             dispatch(setStatus(statuses.ERROR));
             dispatch(setMessage(res.data.messages[0]));

@@ -1,14 +1,15 @@
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
+import HeaderContainer from './ui/header/Header';
 import { Login } from './ui/login/Login';
 
 function App() {
   return <div>
-
+    <HeaderContainer />
     <Routes>
       <Route path='/login' element={<Login />} />
+      {/* <Route path='/logout' element={<Login />} /> */}
     </Routes>
-
   </div>
 }
 
