@@ -1,5 +1,5 @@
-import { useDispatch } from "react-redux";
 import { axiosInstance } from "../dal/axios-instance";
+import { setMessage, setStatus, statuses } from "./LoginReducer";
 
 const SET_IS_AUTH = 'APP/AUTH/SET_IS_AUTH';
 const SET_USER_INFO = 'APP/AUTH/SET_USER_INFO';
@@ -28,7 +28,7 @@ export const me = () => (dispatch) => {
 }
 
 export const logOut = () => (dispatch) => {
-    axiosInstance.get('auth/logout')
+    axiosInstance.delete('auth/login')
         .then((res) => {
             if (res.data.resultCode === 0) {
                 dispatch(setIsAuth(false));

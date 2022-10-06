@@ -2,6 +2,7 @@ import React from "react";
 import { connect, useDispatch, useSelector } from "react-redux";
 import { Navigate, NavLink } from "react-router-dom";
 import { logOut, me } from "../../redux-bll/AuthReducer";
+import '../../App.css';
 
 export const Header = ({}) => {
   let isAuth = useSelector((state) => state.auth.isAuth);
@@ -10,16 +11,11 @@ export const Header = ({}) => {
 
   const onLogOutClick = () =>  dispatch(logOut());
 
-
-//   if(!isAuth) {
-//     return <Navigate to={'/login'} />
-// }
-
   return (
     <div>
       {isAuth && (
         <div>
-          {userInfo.userName} - <span onClick={onLogOutClick}>Log Out</span>
+          {userInfo.userName} - <span onClick={onLogOutClick}><NavLink to="login">Log Out</NavLink></span>
         </div>
       )}
       {!isAuth && (

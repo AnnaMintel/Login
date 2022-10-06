@@ -4,11 +4,10 @@ import HeaderContainer from './ui/header/Header';
 import { Login } from './ui/login/Login';
 
 function App() {
-  return <div>
-    <HeaderContainer />
+  return <div className='App'>
+    {/* <HeaderContainer /> */}
     <Routes>
       <Route path='/login' element={<Login />} />
-      {/* <Route path='/logout' element={<Login />} /> */}
     </Routes>
   </div>
 }

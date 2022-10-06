@@ -1,0 +1,71 @@
+.loginBlock {
+  border-radius: 20px;
+  width: 300px;
+  padding: 30px;
+  background-color: rgba(0, 0, 0, 0.4);
+  box-shadow: 1px 1px 2px #ffc400ef;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.loginBlock h1 {
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 700;
+  align-self: center;
+}
+
+.userEmail,
+.userPassword {
+  position: relative;
+}
+
+.icon1,
+.icon2 {
+  position: absolute;
+  left: 12px;
+  top: 18px;
+  color: rgb(256, 256, 256);
+}
+
+.loginBlock input[type="text"],
+.loginBlock input[type="password"] {
+  font-size: 20px;
+  border: 0px;
+  background: none;
+  display: block;
+  margin: 20px auto;
+  border: 3px solid #0367fd;
+  padding: 14px 6px 14px 34px;
+  width: 220px;
+  outline: none;
+  color: #fff;
+  border-radius: 24px;
+  transition: all 0.2s ease-in;
+}
+
+.loginBlock input[type="text"]:focus,
+.loginBlock input[type="password"]:focus {
+  width: 250px;
+  border-color: #ffc400ec;
+}
+
+.button {
+    border: 0px;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 3px solid #ffc400ec;
+    padding: 14px 35px;
+    font-size: 18px;
+    color: rgb(256,256,256);
+    border-radius: 20px;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+.button:hover{
+    background-color: #ffc400ca;
+}
