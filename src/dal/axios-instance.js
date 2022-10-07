@@ -7,3 +7,9 @@ export const axiosInstance = axios.create({
         "API-KEY": "8bc12464-5a08-4df5-997e-86308282666b"
     }
 })
+
+// export const authAPI = {
+//     me() {
+//         return axiosInstance.get(`auth/me`);
+//     }
+// }

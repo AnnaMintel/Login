@@ -4,18 +4,9 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
-import { applyMiddleware, combineReducers, createStore } from 'redux';
-import { LoginReducer } from './redux-bll/LoginReducer';
-import thunk from 'redux-thunk';
 import { BrowserRouter } from 'react-router-dom';
-import { AuthReducer } from './redux-bll/AuthReducer';
+import { store } from './redux-bll/reduxStore';
 
-let store = createStore(combineReducers({
-  login: LoginReducer,
-  auth: AuthReducer
-}), applyMiddleware(thunk))
-
-//ui
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <Provider store={store}>

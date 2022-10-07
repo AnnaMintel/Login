@@ -1,15 +1,19 @@
 import React from "react";
 import { connect, useDispatch, useSelector } from "react-redux";
 import { Navigate, NavLink } from "react-router-dom";
-import { logOut, me } from "../../redux-bll/AuthReducer";
+import { logOut, me } from "../../redux-bll/authReducer";
 import '../../App.css';
 
-export const Header = ({}) => {
+export const Main = () => {
   let isAuth = useSelector((state) => state.auth.isAuth);
   let userInfo = useSelector((state) => state.auth.userInfo);
   const dispatch = useDispatch();
 
   const onLogOutClick = () =>  dispatch(logOut());
+
+  if (!isAuth) {
+    return <Navigate to={"/"} />;
+  }
 
   return (
     <div>
@@ -27,32 +31,3 @@ export const Header = ({}) => {
   );
 };
 
-class HeaderContainer extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
-  componentWillUnmount() {
-    this.props.me();
-  }
-
-  render() {
-    return <Header {...this.props} />;
-  }
-}
-
-let mapStateToProps = (s) => ({
-  userInfo: s.auth.userInfo,
-  isAuth: s.auth.isAuth,
-});
-
-let mapDispatchToProps = (dispatch) => ({
-  me: () => {
-    dispatch(me());
-  },
-  logOut: () => {
-    dispatch(logOut());
-  },
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(HeaderContainer);

@@ -1,13 +1,14 @@
+import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
-import HeaderContainer from './ui/header/Header';
+import Header, { Main } from './ui/header/Main';
 import { Login } from './ui/login/Login';
 
 function App() {
   return <div className='App'>
-    {/* <HeaderContainer /> */}
     <Routes>
-      <Route path='/login' element={<Login />} />
+      <Route path='/' element={<Login />} />
+      <Route path='/main' element={<Main />} />
     </Routes>
   </div>
 }
