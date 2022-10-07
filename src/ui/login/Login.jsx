@@ -8,6 +8,7 @@ import EmailIcon from "@mui/icons-material/Email";
 import LockOpenIcon from "@mui/icons-material/LockOpen";
 
 export const Login = ({ message }) => {
+  
   const dispatch = useDispatch();
   let status = useSelector((state) => state.login.status);
   let isAuth = useSelector((state) => state.auth.isAuth);
@@ -35,7 +36,7 @@ export const Login = ({ message }) => {
   return (
     <form className={s.loginBlock}>
       <h1>Login</h1>
-      <div>
+
         <div className={s.userEmail}>
           <input
             type="text"
@@ -55,7 +56,7 @@ export const Login = ({ message }) => {
           />
           <LockOpenIcon className={s.icon2} />
         </div>
-      </div>
+
 
       <div>
         <button
