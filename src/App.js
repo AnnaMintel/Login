@@ -7,8 +7,8 @@ import { Login } from './ui/login/Login';
 function App() {
   return <div className='App'>
     <Routes>
-      <Route path='/' element={<Login />} />
-      <Route path='/main' element={<Main />} />
+      <Route path='/Login_form/' element={<Login />} />
+      <Route path='/Login_form/main' element={<Main />} />
     </Routes>
   </div>
 }
