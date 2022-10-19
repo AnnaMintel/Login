@@ -12,16 +12,14 @@ export const Main = () => {
   const onLogOutClick = () => dispatch(logOut());
 
   if (!isAuth) {
-    return <Navigate to={"/"} />;
-  }
+    return <Navigate to={"/Login_form"} />;
+  } 
 
   return (
     <div className={s.mainBlock}>
       <h1>Welcome!</h1>
       <button onClick={onLogOutClick}>
-        <NavLink className={s.navLink} to="/">
           Log Out
-        </NavLink>
       </button>
     </div>
   );

@@ -30,7 +30,7 @@ export const Login = ({ message }) => {
   );
 
   if (isAuth) {
-    return <Navigate to={"/main"} />;
+    return <Navigate to={"/Login_form/main"} />;
   }
 
   return (
