@@ -34,6 +34,7 @@ export const Login = ({ message }) => {
   }
 
   return (
+    <div> 
     <form className={s.loginBlock}>
       <h1>Login</h1>
 
@@ -70,6 +71,12 @@ export const Login = ({ message }) => {
       </div>
       {errorMessageBlock}
     </form>
+    <div className={s.testData}>
+      *test data:  
+      <p><u>login</u>: annikamintel99@yandex.ru</p>
+      <p><u>password</u>: annmintv</p>
+    </div>
+    </div>
   );
 };
 
